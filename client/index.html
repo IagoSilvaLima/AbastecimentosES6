@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Abastecimentos</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">Abastecimentos</h1>
+            <form  onsubmit="abastecimentoController.adiciona(event)">
+                <div class="form-group">
+                    <label for="prefixo">Prefixo</label>
+                    <input id="prefixo" class="form-control" type="text" autofocus required/>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <input id="data" class="form-control" type="date"  required/>
+                </div>
+                <div class="form-group">
+                    <label for="combustivel">Combustivel</label>
+                    <input id="combustivel" class="form-control" type="number" required/>
+                </div>
+
+                <button class="btn btn-primary"  type="submit">Salvar</button>
+            </form>
+
+            <div class="text-center">
+                <button onclick="abastecimentoController.apaga()" class="btn btn-primary text-center">
+                    Apagar
+                </button>
+            </div>
+
+            <div id="abastecimentosView"></div>
+            <script src="js/app/models/Abastecimento.js"></script>
+            <script src="js/app/models/ListaAbastecimentos.js"></script>
+            <script src="js/app/views/View.js"></script>
+            <script src="js/app/views/AbastecimentosView.js"></script>
+            <script src="js/app/services/ProxyFactory.js"></script>
+            <script src="js/app/helpers/Bind.js"></script>
+            <script src="js/app/controllers/AbastecimentoController.js"></script>
+
+            <script>
+                var abastecimentoController = new AbastecimentoController();
+            </script>
+        </div>
+    </body>
+</html>
